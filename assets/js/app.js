@@ -7,10 +7,14 @@ let player1CurrentDiv = document.querySelector('.player1-current-score');
 let player2CurrentDiv = document.querySelector('.player2-current-score');
 let player1 = document.querySelector('.main-player1');
 let player2 = document.querySelector('.main-player2');
-let player1Score = document.querySelector('.player1-score');
-let player2Score = document.querySelector('.player2-score');
+let player1ScoreDiv = document.querySelector('.player1-score');
+let player2ScoreDiv = document.querySelector('.player2-score');
 
 
+let player1Score = 0;
+let player2Score = 0;
+player1ScoreDiv.textContent = player1Score;
+player2ScoreDiv.textContent = player2Score;
 // PLayer 1 Current Score
 let player1CurrentScore = 0;
 // player1CurrentDiv.textContent = player1CurrentScore;
@@ -37,8 +41,7 @@ function genetateImages(num) {
     mainDiv.appendChild(generateDiv);
 }
 
-function isActivePlayer(random, activePlayer, nextPlayer) {
-    
+function currentFailed(random) {
     if(random === 1){
         player1CurrentScore = 0;
         player1CurrentDiv.textContent = player1CurrentScore;
@@ -47,22 +50,65 @@ function isActivePlayer(random, activePlayer, nextPlayer) {
         player1CurrentScore += random;
         player1CurrentDiv.textContent = player1CurrentScore;
     }
-    holdBtn.addEventListener("click", ()=>{
-        player1Score.textContent = player1CurrentScore;
-        activePlayer.classList.remove("active");
-        nextPlayer.classList.add("active");
-    })
+}
+
+function isActivePlayer(random, activePlayer, nextPlayer) {
+    
+    if(activePlayer == player1){
+
+        if(random === 1){
+            player1CurrentScore = 0;
+            player1CurrentDiv.textContent = player1CurrentScore;
+            activePlayer.classList.remove("active");
+            nextPlayer.classList.add("active");
+        }
+        else{
+            player1CurrentScore += random;
+            player1CurrentDiv.textContent = player1CurrentScore;
+        }
+    }
+    else if(activePlayer == player2){
+        if(random === 1){
+            player2CurrentScore = 0;
+            player2CurrentDiv.textContent = player2CurrentScore;
+            activePlayer.classList.remove("active");
+            nextPlayer.classList.add("active");
+        }
+        else{
+            player2CurrentScore += random;
+            player2CurrentDiv.textContent = player2CurrentScore;
+        }
+    }
+    
 }
 
 rollBtn.addEventListener('click', () => {
-    // let activePlayer;
     const randomNum = Math.floor(Math.random() * 6) + 1;
     genetateImages(randomNum);
     
     if (player1.classList.contains('active')){
         isActivePlayer(randomNum, player1, player2);
+        holdBtn.addEventListener("click", ()=>{
+            player1Score = player1CurrentScore;
+            player1ScoreDiv.textContent = 0;
+            player1ScoreDiv.textContent += player1Score;
+            player2CurrentScore = 0;
+            player2CurrentDiv.textContent = player1CurrentScore;
+            player1.classList.remove("active");
+            player2.classList.add("active");
+        });
     }
     else if(player2.classList.contains('active')){
         isActivePlayer(randomNum, player2, player1);
+
+        holdBtn.addEventListener("click", ()=>{
+            player2Score = player2CurrentScore;
+            player1ScoreDiv.textContent = 0;
+            player2ScoreDiv.textContent = player2Score;
+            player2CurrentScore = 0;
+            player2CurrentDiv.textContent = player1CurrentScore;
+            player2.classList.remove("active");
+            player1.classList.add("active");
+        });
     }
 })
