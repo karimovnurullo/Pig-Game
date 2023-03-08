@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .main {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 10px;
+  height: 550px;
+  display: flex;
+  background: red;
+  overflow: hidden;
+}
+.container .main-left {
+  width: 50%;
+  height: 100%;
+  background: #B57A9D;
+}
+.container .main-right {
+  width: 50%;
+  height: 100%;
+  background: #B57A9D;
+}
+.container .main-player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 200px;
+}
+.container .main-player .player-name {
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #333333;
+}
+.container .main-player .player-score {
+  font-size: 80px;
+  color: #C7365F;
+  text-transform: uppercase;
+}
+.container .main-player .board {
+  width: 208px;
+  height: 120px;
+  border-radius: 10px;
+  background: #C7365F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.container .main-player .board .current {
+  font-size: 17px;
+  color: #dddddd;
+  text-transform: uppercase;
+}
+.container .main-player .board .current-score {
+  font-size: 35px;
+  color: #fff;
+}
+.container .main-player.active {
+  background: #D9AEBD;
+}
+.container .main-player.active .player-name {
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.container .main .genetate-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 100px;
+  height: 100px;
+  background: #fff;
+}
+.container .main .genetate-div img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .main .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 250px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.container .main .center .new-game-btn, .container .main .center .roll-btn, .container .main .center .hold-btn {
+  padding: 10px 25px;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+.container .main .center .new-game-btn:active, .container .main .center .roll-btn:active, .container .main .center .hold-btn:active {
+  transform: scale(0.98) translateY(3px);
+}
+.container .main .center .center-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}/*# sourceMappingURL=main.css.map */
