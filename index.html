@@ -10,34 +10,34 @@
 <body>
     <div class="container">
         <div class="main">
-            <!-- <div class="genetate-div">
-                <img src="./assets/images/1.png" class="image" alt="">
-            </div> -->
+            <!-- <div class="genetate-div"> -->
+                <img src="./assets/images/1.png" class="image dice" alt="">
+            <!-- </div> -->
             <div class="center">
-                <div class="new-game-btn">🔄 New Game</div>
+                <div class="new-game-btn btn--new">🔄 New Game</div>
                 <div class="center-bottom">
-                    <div class="roll-btn">🎲  Roll Dice</div>
-                    <div class="hold-btn">📥  Hold</div>
+                    <div class="roll-btn btn--roll">🎲  Roll Dice</div>
+                    <div class="hold-btn btn--hold">📥  Hold</div>
                 </div>
             </div>
-            <div class="main-left main-player1 players active">
+            <div class="main-left player--0 players active">
                 <div>
                     <div class="player-name">Player 1</div>
-                    <div class="player-score player1-score"></div>
+                    <div class="player-score " id="score--0"></div>
                 </div>
                 <div class="board">
                     <div class="current">Current</div>
-                    <div class="player1-current-score current-score"></div>
+                    <div class="current-score" id="current--0"></div>
                 </div>
             </div>
-            <div class="main-right main-player2 players">
+            <div class="main-right player--1 players">
                 <div>
                     <div class="player-name">Player 2</div>
-                    <div class="player-score player2-score"></div>
+                    <div class="player-score" id="score--1"></div>
                 </div>
                 <div class="board">
                     <div class="current">Current</div>
-                    <div class="player2-current-score current-score"></div>
+                    <div class="current-score" id="current--1"></div>
                 </div>
             </div>
         </div>

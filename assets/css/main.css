@@ -84,7 +84,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-.container .main .genetate-div {
+.container .main .dice {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -93,11 +93,8 @@ body {
   height: 100px;
   background: #fff;
 }
-.container .main .genetate-div img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.container .main .dice.hidden {
+  display: none;
 }
 .container .main .center {
   position: absolute;
