@@ -1,14 +1,19 @@
 // let generateDiv = document.querySelector('.genetate-div');
 let mainDiv = document.querySelector('.main');
-let rollDiv = document.querySelector('.roll-btn');
+let rollBtn = document.querySelector('.roll-btn');
+let holdBtn = document.querySelector('.hold-btn');
 let image = document.querySelector('.genetate-div img');
 let player1CurrentDiv = document.querySelector('.player1-current-score');
 let player2CurrentDiv = document.querySelector('.player2-current-score');
+let player1 = document.querySelector('.main-player1');
+let player2 = document.querySelector('.main-player2');
+let player1Score = document.querySelector('.player1-score');
+let player2Score = document.querySelector('.player2-score');
 
 
 // PLayer 1 Current Score
 let player1CurrentScore = 0;
-player1CurrentDiv.textContent = player1CurrentScore;
+// player1CurrentDiv.textContent = player1CurrentScore;
 
 // PLayer 2 Current Score
 let player2CurrentScore = 0;
@@ -32,11 +37,32 @@ function genetateImages(num) {
     mainDiv.appendChild(generateDiv);
 }
 
-function isActivePlayer() {
+function isActivePlayer(random, activePlayer, nextPlayer) {
     
+    if(random === 1){
+        player1CurrentScore = 0;
+        player1CurrentDiv.textContent = player1CurrentScore;
+    }
+    else{
+        player1CurrentScore += random;
+        player1CurrentDiv.textContent = player1CurrentScore;
+    }
+    holdBtn.addEventListener("click", ()=>{
+        player1Score.textContent = player1CurrentScore;
+        activePlayer.classList.remove("active");
+        nextPlayer.classList.add("active");
+    })
 }
 
-rollDiv.addEventListener('click', () => {
+rollBtn.addEventListener('click', () => {
+    // let activePlayer;
     const randomNum = Math.floor(Math.random() * 6) + 1;
     genetateImages(randomNum);
+    
+    if (player1.classList.contains('active')){
+        isActivePlayer(randomNum, player1, player2);
+    }
+    else if(player2.classList.contains('active')){
+        isActivePlayer(randomNum, player2, player1);
+    }
 })

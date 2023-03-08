@@ -38,7 +38,7 @@ body {
   height: 100%;
   background: #B57A9D;
 }
-.container .main-player {
+.container .main .players {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,17 +46,17 @@ body {
   text-align: center;
   gap: 200px;
 }
-.container .main-player .player-name {
+.container .main .players .player-name {
   font-size: 40px;
   text-transform: uppercase;
   color: #333333;
 }
-.container .main-player .player-score {
+.container .main .players .player-score {
   font-size: 80px;
   color: #C7365F;
   text-transform: uppercase;
 }
-.container .main-player .board {
+.container .main .players .board {
   width: 208px;
   height: 120px;
   border-radius: 10px;
@@ -67,19 +67,19 @@ body {
   align-items: center;
   gap: 20px;
 }
-.container .main-player .board .current {
+.container .main .players .board .current {
   font-size: 17px;
   color: #dddddd;
   text-transform: uppercase;
 }
-.container .main-player .board .current-score {
+.container .main .players .board .current-score {
   font-size: 35px;
   color: #fff;
 }
-.container .main-player.active {
+.container .main .players.active {
   background: #D9AEBD;
 }
-.container .main-player.active .player-name {
+.container .main .players.active .player-name {
   font-size: 40px;
   font-weight: bold;
   text-transform: uppercase;

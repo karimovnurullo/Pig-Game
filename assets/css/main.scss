@@ -41,7 +41,7 @@ body {
             background: #B57A9D;
         }
 
-        &-player {
+        .players{
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -84,7 +84,7 @@ body {
             }
         }
 
-        &-player.active {
+        .players.active {
             background: #D9AEBD;
 
             .player-name {
