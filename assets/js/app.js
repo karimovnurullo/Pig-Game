@@ -83,6 +83,36 @@ btnNew.addEventListener('click', init);
 
 
 
+const submit = document.querySelector('.submit'),
+    input1 = document.querySelector('.input-1'),
+    input2 = document.querySelector('.input-2'),
+    player1Name = document.querySelector('.player-name1'),
+    player2Name = document.querySelector('.player-name2'),
+    mainDiv = document.querySelector('.main'),
+    loginDiv = document.querySelector('.log-in');
+
+submit.addEventListener('click', () => {
+    let player1Value;
+    let player2Value;
+    if (player1Value === "") {
+        input1.style.border = "1px solid red";
+        
+    } else if (player2Value === "") {
+        input1.style.border = "1px solid red";
+    }
+    else{
+        player1Value = input1.value;
+        player2Value = input2.value;
+    }
+    if (player1Value && player2Value) {
+        player1Name.textContent = player1Value;
+        player2Name.textContent = player2Value;
+        mainDiv.style.display = "flex";
+        loginDiv.style.display = "mone";
+    }
+
+});
+
 // let generateDiv = document.querySelector('.genetate-div');
 // let mainDiv = document.querySelector('.main');
 // let rollBtn = document.querySelector('.roll-btn');
